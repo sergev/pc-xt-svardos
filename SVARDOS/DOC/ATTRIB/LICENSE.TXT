@@ -1,0 +1,4 @@
+This software is released under the terms of the GNU GPL license version 2.
+See DOC\GPL2.TXT for details (from the GPL2 package) or read it online at:
+
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html

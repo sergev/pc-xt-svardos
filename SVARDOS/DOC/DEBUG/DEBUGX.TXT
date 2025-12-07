@@ -1,0 +1,1 @@
+Please note that this package contains only the classic DEBUG binary, not the improved, 386+ DEBUGX version. For the latter, you need to pull the DEBUGX package.

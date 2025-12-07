@@ -1,0 +1,30 @@
+Begin3
+Title:          sort
+Version:        1.5.1
+Entered-date:   2016-11-13
+Description:    Sort the contents of a text file, optionally using the NLS collate table
+Keywords:       sort, text, file
+Author:         k4gvo -at- qsl.net (James Lynch)
+Maintained-by:  Eric Auer <eric -at- coli.uni-sb.de>
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/sort/
+Platforms:      DOS (e.g. Borland Turbo C), includes own KITTEN library version, FreeDOS
+Copying-policy: GNU General Public License, Version 2
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Sort
+Defunct-Primary-Site: http://www.coli.uni-saarland.de/~eric/stuff/soft/
+End
+
+C:\SVARDOS\nls\sort.en?927C6B2C
+C:\SVARDOS\nls\sort.lv?7AC0B1EA
+C:\SVARDOS\nls\sort.de?62FCF77D
+C:\SVARDOS\nls\sort.pt?28F766AD
+C:\SVARDOS\nls\sort.tr?80478FAC
+C:\SVARDOS\nls\sort.pl?3CDE9856
+C:\SVARDOS\nls\sort.it?7ED68808
+C:\SVARDOS\nls\sort.es?5E2E4777
+C:\SVARDOS\nls\sort.si?A32E1AFC
+C:\SVARDOS\nls\sort.nl?B3B86E56
+C:\SVARDOS\nls\sort.fr?89835ED6
+C:\SVARDOS\doc\sort\sort.1?93A611F7
+C:\SVARDOS\doc\sort\changes?9722C327
+C:\SVARDOS\doc\sort\sort.rof?DA927913
+C:\SVARDOS\sort.exe?E3F213BE

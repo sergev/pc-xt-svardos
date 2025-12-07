@@ -1,0 +1,32 @@
+Begin3
+Title:          MEM
+Version:        1.12
+Entered-date:   2022-03-01
+Description:    Display used and free memory in your system
+Summary:        Displays the amount of used and free memory in your system
+Keywords:       Memory, mem, xms, ems, umb, hma
+Author:         Joe Cosentino <jayc17@mediaone.net>
+Maintained-by:  Bart Oldeman <bartoldeman@users.sourceforge.net>
+Primary-site:   https://gitlab.com/FDOS/base/mem
+Alternate-site:
+Original-site:  http://www.dosemu.org/~bart
+Platforms:      FreeDOS
+Copying-policy: GNU General Public License, Version 2
+Wiki-site:      http://wiki.freedos.org/wiki/index.php/Mem
+End
+
+C:\SVARDOS\nls\mem.tr?0EDB58B5
+C:\SVARDOS\nls\mem.sv?96BB46D4
+C:\SVARDOS\nls\mem.sl?7AE2B2C5
+C:\SVARDOS\nls\mem.pl?11403E86
+C:\SVARDOS\nls\mem.nl?946F1622
+C:\SVARDOS\nls\mem.it?A371AD3F
+C:\SVARDOS\nls\mem.fr?A2FFDB95
+C:\SVARDOS\nls\mem.fi?BFEA89D9
+C:\SVARDOS\nls\mem.es?5E33883B
+C:\SVARDOS\nls\mem.en?88504B84
+C:\SVARDOS\nls\mem.de?738E85ED
+C:\SVARDOS\doc\mem\readme.txt?DEDCE10B
+C:\SVARDOS\doc\mem\license.txt?E7EE8C34
+C:\SVARDOS\doc\mem\changes.txt?FA7DF583
+C:\SVARDOS\mem.exe?7E169150

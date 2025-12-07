@@ -1,0 +1,28 @@
+Begin3
+Title:          find
+Version:        3.0b
+Entered-date:   2022-03-02
+Description:    Display all lines in one or more files that contain a given string.
+Keywords:       freedos, find, grep
+Author:         Jim Hall <jhall -at- freedos.org>
+Maintained-by:  Eric Auer eric -at- coli.uni-sb.de
+Primary-site:   http://www.coli.uni-sb.de/~eric/stuff/soft/
+Alternate-site 	http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/
+Platforms:      DOS (e.g. Borland C, Turbo C), includes own KITTEN library version
+Copying-policy: GPL 2
+End
+
+C:\SVARDOS\doc\find\license.txt?E7EE8C34
+C:\SVARDOS\nls\find.sv?E1B73C13
+C:\SVARDOS\nls\find.ru?DECE9B87
+C:\SVARDOS\nls\find.nl?3CA3A9DD
+C:\SVARDOS\nls\find.lv?091EC18B
+C:\SVARDOS\nls\find.it?9E65737F
+C:\SVARDOS\nls\find.hu?261087DC
+C:\SVARDOS\nls\find.es?269179B8
+C:\SVARDOS\nls\find.en?D3269378
+C:\SVARDOS\nls\find.de?F521A0D2
+C:\SVARDOS\doc\find\readme.txt?F8845537
+C:\SVARDOS\doc\find\news.txt?2E2E0879
+C:\SVARDOS\doc\find\bugs.txt?EF4B0E8E
+C:\SVARDOS\find.com?9ABDE35B

@@ -1,0 +1,17 @@
+Begin3
+Title:          CHKDSK
+Version:        0.9.2 beta
+Entered-date:   2013-06-13
+Description:    Check the disk for errors. 
+Keywords:       Check disk errors
+Author:         Imre Leber <imre.leber -AT- telenet.be>
+Maintained-by:  Imre Leber <imre.leber -AT- telenet.be>
+Primary-site:   http://users.telenet.be/imre/FreeDOS/
+Alternate-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/chkdsk/
+                http://users.pandora.be/imre/FreeDOS/
+Original-site:  http://users.telenet.be/imre/FreeDOS/
+Platforms:      DOS, FreeDOS
+Copying-policy: GPL
+End
+
+C:\SVARDOS\chkdsk.exe?606EBCC4

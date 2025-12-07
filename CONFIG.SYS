@@ -1,0 +1,26 @@
+; SvarDOS kernel configuration
+
+; highest allowed drive letter
+LASTDRIVE=Z
+
+; max. number of files that programs are allowed to open simultaneously
+FILES=25
+
+; SHELL history: this allows to recall previous commands with up/down keys
+; Value after comma is the amount of allocated bytes (min: 128, max: 4096)
+HISTORY=ON,256
+
+; XMS memory driver
+;DEVICE=C:\SVARDOS\HIMEMX.EXE
+
+; try moving DOS to upper memory, then to high memory
+;DOS=UMB,HIGH
+
+; command interpreter (shell) location and environment size
+SHELL=C:\COMMAND.COM /E:512 /P
+
+; NLS configuration
+COUNTRY=001,437,C:\SVARDOS\COUNTRY.SYS
+
+; CD-ROM driver initialization
+;DEVICE=C:\DRIVERS\VIDECDD\VIDE-CDD.SYS /D:SVCD0001

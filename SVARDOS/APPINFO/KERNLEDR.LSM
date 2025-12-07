@@ -1,0 +1,7 @@
+version: 20250427
+description: Enhanced DR-DOS kernel
+warn: EDR kernel installed. Please reboot to activate it.
+
+C:\kernel.sys?42870A7E
+C:\SVARDOS\doc\kernledr\license.htm?151C9D91
+C:\SVARDOS\country.sys?141A5DDF

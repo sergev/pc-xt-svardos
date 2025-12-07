@@ -1,0 +1,36 @@
+Begin3
+Title:          CPI (Code Page Information) Package
+Version:        3.0
+Entered-date:   2013-06-13
+Description:    Package of DISPLAY-type, UPX-compressed CPI files with various DOS codepages.
+Keywords:       display, codepage, code page, cp, dos codepage, dos cp, charset
+Author:         hperon@terra.com.br (Henrique Peron)
+Maintained-by:  hperon@terra.com.br (Henrique Peron)
+Primary-site:   http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/cpi/
+Alternate-site: -
+Platforms:      FreeDOS
+Copying-policy: GPL
+End
+
+C:\SVARDOS\doc\cpidos\license.txt?E7EE8C34
+C:\SVARDOS\doc\cpidos\codepage.txt?8D338436
+C:\SVARDOS\doc\cpidos\readme.txt?C458206D
+C:\SVARDOS\doc\cpidos\history.txt?01EC5449
+C:\SVARDOS\cpi\ega3.cpx?537E3224
+C:\SVARDOS\cpi\ega.cpx?5CE500B9
+C:\SVARDOS\cpi\ega15.cpx?ECA449AD
+C:\SVARDOS\cpi\ega17.cpx?3D67F7A4
+C:\SVARDOS\cpi\ega10.cpx?5BED177A
+C:\SVARDOS\cpi\ega8.cpx?4B529A6A
+C:\SVARDOS\cpi\ega11.cpx?239F175A
+C:\SVARDOS\cpi\ega4.cpx?268908A4
+C:\SVARDOS\cpi\ega5.cpx?6B9DE896
+C:\SVARDOS\cpi\ega14.cpx?C53F969A
+C:\SVARDOS\cpi\ega7.cpx?CACC5719
+C:\SVARDOS\cpi\ega18.cpx?61BC1E7A
+C:\SVARDOS\cpi\ega16.cpx?6C19F7FE
+C:\SVARDOS\cpi\ega9.cpx?0EFAFFDA
+C:\SVARDOS\cpi\ega6.cpx?95D6A55C
+C:\SVARDOS\cpi\ega2.cpx?DCD22A12
+C:\SVARDOS\cpi\ega13.cpx?1DFEB400
+C:\SVARDOS\cpi\ega12.cpx?961E42AE

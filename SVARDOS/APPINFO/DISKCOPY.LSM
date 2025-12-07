@@ -1,0 +1,28 @@
+Begin3
+Title:            DiskCopy
+Version:          beta 0.95
+Entered-date:     23 Jul 2008
+Description:      Copy one disk or image file to an other
+Keywords:         Freedos, disk, diskcopy, copy
+Author:           "Imre Leber" <imre.leber@worldonline.be>
+Maintained-by:    "Imre Leber" <imre.leber@worldonline.be>
+Primary-site:     http://users.pandora.be/imre/FreeDOS/
+Alternative-site: http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/diskcopy/
+Original-site:    http://users.pandora.be/imre/FreeDOS/
+Platforms:        DOS, FreeDOS
+Copying-policy:   GPL
+End
+
+C:\SVARDOS\doc\diskcopy\license.txt?E7EE8C34
+C:\SVARDOS\nls\diskcopy.de?3752FF70
+C:\SVARDOS\nls\diskcopy.si?30C7C86C
+C:\SVARDOS\nls\diskcopy.nl?1BB70EBB
+C:\SVARDOS\nls\diskcopy.en?511F7CA8
+C:\SVARDOS\nls\diskcopy.tr?0ACC42B4
+C:\SVARDOS\nls\diskcopy.dk?10DD08BF
+C:\SVARDOS\nls\diskcopy.pl?0CD598AB
+C:\SVARDOS\nls\diskcopy.fr?0BA866C5
+C:\SVARDOS\nls\diskcopy.es?1A816E69
+C:\SVARDOS\nls\diskcopy.it?5F6131F4
+C:\SVARDOS\doc\diskcopy\diskcopy?C2A98B78
+C:\SVARDOS\diskcopy.exe?98AF937B

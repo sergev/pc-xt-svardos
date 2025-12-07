@@ -1,0 +1,277 @@
+DskImage 1.0
+M. Brutman (mbbrutman@brutman.com)
+February 10th 2006
+
+
+Introduction:
+
+Everybody writes a disk imager.  This is my version of what a disk imager
+should be.
+
+The basic idea is to be able to take a 'snapshot' of a floppy disk and put
+it in a file or to be able to write a snapshot back to a floppy disk.
+This lets you back up entire floppy disks to hard drives or other storage
+and restore them when you need them.  Images of diskettes stored on a hard
+disk or other storage are nice in that they do not develop bad sectors as
+easily as real floppy diskettes do.
+
+Why backup an entire diskette at a time when you can just copy files?
+Because copying files does not preserve the boot sector, volume label,
+delete files, or unused spaces of a disk.  Sometimes these parts of the
+disk are interesting and need to be preserved.	This is especially true of
+diskettes that have operating systems on them - without the boot sector
+being saved they are kind of useless.
+
+DskImage is a little different than other diskette imagers in that it will
+retry a bad sector a few times before giving up on it.	On older diskettes
+where sectors are starting to go bad being able to retry a read a few
+times is the difference between getting a good snapshot and a corrupted
+snapshot.
+
+DskImage does not handle copy protected diskettes.  You need something
+more advanced, like CopyIIPC, TeleDisk, or a Central Point Option Board
+to handle those.
+
+
+
+Usage:
+
+To use DskImage you specify a source and a target.  Sources and targets are
+either disk files or BIOS drive specifications.  (More on that in a moment.)
+
+When you specify a file as the source you need to specify a BIOS drive
+specification as the target.  This means that you will be creating a
+diskette from an image file.
+
+When you specify a BIOS drive specification as the source you need to
+specify a file as the target.  This means that you that you are making
+a snapshot of a diskette and storing it in a file.
+
+A BIOS drive specification looks like this:
+
+  DD:TT:HH:SS
+
+Where
+
+  DD: is a number from 0 to 3
+  TT: is a number from 1 to 80
+  HH: is a number from 1 to 2
+  SS: is a number from 1 to 21
+
+DD is the drive number as the BIOS knows it.  Floppy disks are numbered
+starting at 0 and going up to 3.  Most machines have one or two diskette
+drives; only older machines like the PC, XT or PCjr might have more than
+two diskette drives.
+
+This number refers to actual diskette drives only, not logical drives like
+DOS might create.  So even if DOS thinks you have an A: and a B: (and they
+both refer to same drive) you really only have one drive and its number
+would be 0.  Drives created by device driver can't be used as a source
+as the BIOS of the machine doesn't know about them.  (Only DOS knows
+about them.)
+
+TT is the number of tracks on your diskette. This is usually going to be 40
+or 80.
+
+HH is the number of sides on the diskette.  This is usually 2, but on very
+old diskettes it might only be 1.  (The other side would be unused and
+unformatted in that case.)
+
+SS is the number of sectors per track on the diskette.	Common values are
+8, 9, 15, or 18.
+
+Below is a table of common diskette formats:
+
+  Size	Format Tracks Heads/Sides Sectors
+
+  5.25"  160KB   40        1         8     Very old format
+  5.25"  180KB   40        1         9     Very old format
+  5.25"  320KB   40        2         8     Very old format
+  5.25"  360KB   40        2         9     Standard PC/XT/Jr format
+  5.25" 1200KB   80        2        15     PC AT
+  3.5"   720KB   80        2         9     First generation 3.5" drives
+  3.5"  1440KB   80        2        18     Modern 3.5" drive format
+
+
+A sector is 512 bytes so if you do the math you can see how things add
+up.  For example here is how the PC AT 1200KB format adds up:
+
+  80 tracks * 2 sides * 15 sectors per track * 512 = 1200KB
+
+
+How do you know which format is on a diskette? When you first examine a
+diskette set the write protect on the diskette to 'on' and then run chkdsk
+on the diskette.  Chkdsk will tell you what format the diskette is.  Note
+that chkdsk lies a little bit, as it subtracts some space for record
+keeping purposes.  It will be close enough to know what you are working
+with though.  For example, if chkdsk reports 354KB total you have a 360KB
+diskette.
+
+One small note - you can not copy from file to file or BIOS drive to BIOS
+drive using DskImage.  If you want to copy from file to file, use the DOS
+copy command.  If you want to copy from drive to drive, use the DOS diskcopy
+command.  (If you are trying to diskcopy on a diskette with read errors,
+then it would make sense to use DskImage first to make an image of the
+source diskette, then use DskImage to make a new copy of the diskette.
+This will let you take advantage of the error recovery in DskImage.)
+
+
+
+Examples:
+
+
+  dskimage 0:40:2:9 file1.dsk
+
+This will copy a standard 360KB diskette into 'file1.dsk'.  Obviously
+you don't want your current working directory to be on the diskette you
+are taking a snapshot of because that will ruin the image as it is
+being created.
+
+
+  dskimage 1:80:2:15 file2.dsk
+
+If you had a 1.2MB type drive as the second diskette drive on a system
+this would copy the contents of the diskette to 'file2.dsk'
+
+
+  dskimage 0:40:1:8 file3.dsk
+
+If you happened to stumble upon a DOS 1.1 diskette this is what you
+would use to take a snapshot.  DOS 1.1 used just one side of the floppy
+disk, and used only 8 sectors per track.
+
+
+
+  dskimage file4.dsk 0:40:2:9
+
+This will take a snapshot of a diskette and write it to the first
+diskette drive.  Because you specified 40 tracks, 2 sides and 9 sectors
+per side I assume you had a 360KB file for your snapshot.
+
+
+
+Error Handling:
+
+Under normal circumstances DskImage will try to read an entire track at
+a time.  This is a nice fast way to work.  In case of an error DskImage
+will retry the entire track one sector at a time, retrying each failing
+sector a few times until it either gets a good read on that sector or it
+gives up.
+
+Floppy diskettes develop errors. They are exposed to more dust,
+moisture and bad environments than tape, hard disks, CD-ROM, etc., and
+they have less built-in error checking.
+
+In a lot of cases a read error is not fatal - it just means that the
+floppy drive tried to read a sector and the error detection mechanism
+said that something wasn't quite right.  It might be in part of the
+sector that isn't important (like past the end of a file), or it might
+be close enough to be usable.  In a lot of cases the read error is
+transient - if you just retry the operation it will read successfully.
+
+By default DskImage will try to retry a read up to 5 times and then it
+will move on.  You can use an environment variable called DSKIMAGE_RETRIES
+to raise this number up to 15, or lower it to 0.  (Lowering the number
+generally doesn't make much sense.)  For example:
+
+  C:\> set DSKIMAGE_RETRIES=10
+  C:\> dskimage 0:80:2:9 file.dsk
+
+After setting the environment variable DskImage will retry failing
+sectors 10 times instead of the usual 5.
+
+Each time DskImage gets an error it will tell you what the error code
+from the BIOS routine was and translate it to English so that it is
+slightly more understandable.
+
+If DskImage finds a bad sector it will not move the data to another part
+of the diskette. If it did, it would be altering the diskette that you are
+trying to make a snapshot of, which is a bad thing.  If you are just
+trying to find and mark bad sectors, use a utility like Norton Utilities
+'dt' (Disk Test).
+
+
+
+File Format:
+
+DskImage gives you a raw sector dump of your diskette.	There is no
+special header or other meta data added, and it does not try to compress
+or eliminate redundant data.  If you had a 360KB diskette, you get a
+360KB file.
+
+This file format is compatible with other disk imagers such as DITU,
+RAWRITE, and the Linux DD command.  It is a standard, and standards are
+good things.
+
+Diskette snapshots are generally fairly easy to compress, so zipping an
+image might save you some space.  It really depends on what was on the
+diskette that you took the snapshot of.
+
+
+
+Mixing BIOS Drive Types and Formats:
+
+This is an advanced topic.
+
+In general, you can take a smaller snapshot and write it to a higher
+capacity diskette.  Here are the rules:
+
+  - You have to use the same number of heads/sides on the target drive
+    that the snapshot was created with.  For example, if it was a one
+    sided diskette, the BIOS drive specification needs to be one sided
+    as well.
+
+  - You have to use the same number of sectors per track on the target
+    drive that the snapshot was created with.
+
+  - The number of tracks on the target drive has to be at least as big
+    as the number of tracks recorded in the snapshot.
+
+
+So here is the only practical example that I know of.  You can take a
+360KB format snapshot and write it to a 720KB diskette.  The target BIOS
+specification would be x:40:2:9, which essentially throws away half of
+the capacity of the target disk, but is legal.	(You might use this when
+substituting a 720KB drive for a 360KB drive.)
+
+If you are going to play around with stuff like this, read up on DOS
+disk formats.
+
+
+
+Reading an image under Linux:
+
+Look up the "-o loopback" option on the mount command.  It will let you
+mount a file containing a disk image onto a directory and work inside
+of the image.  You might want to specify the 'ro' option as well which
+prevents you from altering the image.
+
+Keep in mind that Linux expects images that 'make sense' to it.  In
+particular, there are older diskettes floating around that are perfectly
+legal DOS formats that might fool the Linux VFAT driver.  These will not
+be readable under Linux even though they work fine on a DOS machine.
+(There was some slop in the format specification early on.)
+
+
+
+Operating system support:
+
+DskImage works under DOS, Windows 9x, Windows 2000, and probably Windows
+XP.  It is a fairly simple program and it uses BIOS calls to do the hard
+work.  It is a DOS program though, so there is no long filename support.
+
+The images are readable using other standard disk imagers.
+
+
+
+Source code:
+
+The source code is available upon request.  It's not public domain, free,
+GPL, etc.  However, I don't mind sharing if the request is non-commercial
+in nature and reasonable.
+
+Bugs or questions? Contact me!
+
+
+<End of File>
+
